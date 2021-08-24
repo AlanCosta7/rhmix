@@ -1,0 +1,236 @@
+// app global css in SCSS form
+@media screen and (max-width: 600px) {
+  .mobHid {
+      visibility: hidden;
+  }
+}
+html {
+  margin: 0;
+  padding: 0;
+
+}
+body {
+  font-family: "Roboto";
+  scroll-behavior: smooth;
+  margin: 0;
+  padding: 0;
+}
+h1 {
+  font-weight: 600;
+  font-size: 3rem;
+}
+h2 {
+  font-weight: 600;
+  font-size: 2.5rem;
+}
+#main {
+  display:table;
+  background: linear-gradient( rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5) ), url('../assets/contador.jpg');
+  background-repeat: no-repeat;
+  background-attachment: fixed;
+  background-size: cover;
+  object-fit: cover;
+  background-position:center;
+}
+#igreja {
+  display:table;
+  background: linear-gradient( rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5) ), url('../assets/ong.jpg');
+  background-repeat: no-repeat;
+  background-attachment: fixed;
+  background-size: cover;
+  object-fit: cover;
+  background-position:center;
+  padding-top:60px
+}
+#igreja2 {
+  display:table;
+  background: linear-gradient( rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5) ), url('../assets/igreja.jpg');
+  background-repeat: no-repeat;
+  background-attachment: fixed;
+  background-size: cover;
+  object-fit: cover;
+  background-position:center;
+  padding-top:60px
+}
+#pagamento {
+  display:table;
+  background: linear-gradient( rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5) ), url('../assets/pagamento.jpg');
+  background-repeat: no-repeat;
+  background-attachment: fixed;
+  background-size: cover;
+  object-fit: cover;
+  background-position:center;
+  padding-top:60px
+}
+#imposto {
+  display:table;
+  background: linear-gradient( rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5) ), url('../assets/imposto.jpg');
+  background-repeat: no-repeat;
+  background-attachment: fixed;
+  background-size: cover;
+  object-fit: cover;
+  background-position:center;
+  padding-top:60px
+}
+#marca {
+  display:table;
+  background: linear-gradient( rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5) ), url('../assets/marca.jpg');
+  background-repeat: no-repeat;
+  background-attachment: fixed;
+  background-size: cover;
+  object-fit: cover;
+  background-position:center;
+  padding-top:60px
+}
+#rural {
+  display:table;
+  background: linear-gradient( rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5) ), url('../assets/rural.jpg');
+  background-repeat: no-repeat;
+  background-attachment: fixed;
+  background-size: cover;
+  object-fit: cover;
+  background-position:center;
+  padding-top:60px
+}
+
+
+#sobre {
+  min-height: 1000px;
+  padding: 0;
+  margin: 0;
+}
+.padrao {
+  min-height: 800px;
+  width: 100vw;
+  padding: 0;
+  margin: 0;
+}
+#clinica {
+  display:table;
+  background: linear-gradient( rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5) ), url('../assets/medico.jpg');
+  background-repeat: no-repeat;
+  background-attachment: fixed;
+  background-size: cover;
+  object-fit: cover;
+  background-position:center;
+  padding-top:60px
+
+}
+
+#rh {
+  display:table;
+  background: linear-gradient( rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5) ), url('../assets/rh.jpg');
+  background-repeat: no-repeat;
+  background-attachment: fixed;
+  background-size: cover;
+  object-fit: cover;
+  background-position:center;
+  padding-top:60px
+
+}
+.uppercase {
+  text-transform: uppercase;
+}
+.fixed {
+  position: fixed;
+}
+.absolute {
+  position: absolute;
+}
+.center {
+  margin: 0;
+  padding: 0;
+  align-items: center;
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  justify-content: center;
+}
+
+.centerDois {
+  align-items: center;
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  justify-content: center;
+}
+
+section {
+  min-height: 600px;
+}
+footer {
+  height: 150px;
+}
+.borda {
+  border-left: 5px solid #dc3545;
+  width: 80%;
+  max-width: 600px;
+  padding-left: 10px;
+}
+.avatar {
+  border-radius: 50%;
+  object-fit: cover;
+}
+.bg-blue-100 {
+  background-color: #cfe2ff
+}
+
+li {
+  list-style-type: style type;
+}
+
+.imgMap {
+  padding: 20px;
+}
+
+.navBtn {
+  background-color: transparent;
+  border: 0;
+}
+
+.fixedBtn {
+  position: fixed;
+  bottom: 30px;
+  right: 30px;
+  width: 40px;
+  height: 40px;
+
+  border-radius: 50%;
+  background-color: rgb(255, 127, 80);
+}
+
+.bg-blue-900 {
+  background-color: #024059
+}
+
+.activ {
+  background-color: #024059
+}
+
+.text-blue {
+  color: #024059
+}
+.nav-link {
+  width: 150px;
+  max-width: 33%;
+}
+
+.nav-pills .nav-link.active,
+.nav-pills .show>.nav-link {
+  color: #fff;
+  background-color: #024059;
+}
+.pt {
+  padding-top: 60px;
+}
+#top {
+  height: 60px;
+}
+.z-top {
+  z-index: 1000;
+}
+
+.scroll {
+  position: fixed;
+  overflow-y: scroll;
+}
