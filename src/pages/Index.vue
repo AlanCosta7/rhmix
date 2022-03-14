@@ -29,12 +29,11 @@
             <h3>Sobre</h3>
             <p>A RH MIX SERVIÇOS EMPRESARIAIS é uma empresa não só de Serviços Contábeis,
                 mas também dos demais serviços burocráticos que são procurados e existentes
-                em um escritório contábil. De fato, a contabilidade se resume a um determinado
-                ponto específico da rotina. Demais serviços são considerados administrativos, como
-                o Departamento Pessoal por exemplo.</p>
-            <p>Dentro deste conceito, nasceu a RH (Recursos Humanos) MIX (múltiplos), no sentido
-                de que precisamos de pessoas para efetuar serviços de modo geral, e dentro deste
-                há uma amplitude de necessidades na qual gerará nosso relacionamento com você.</p>
+                em um escritório contábil. Com profissionais engajados e comprometidos trabalhando
+                por você em seu negócio.
+            </p>
+            <p>Dentro deste conceito, nasceu a RH (Recursos Humanos) MIX (múltiplos serviços),
+              indo muito além dos serviços contábeis, trazendo para você a inovação no atendimento.</p>
             <div class="q-mt-5">
                 <h6>Missão</h6>
                 <p>Levar ao mercado a melhor prestação de serviços, atendendo às necessidades de todos de forma única e humanizada.</p>
@@ -51,12 +50,7 @@
             <div class="q-pa-md col-lg-5 col-md-10 col-xs-12">
                 <h3 class="borda text-start">Contabilidade</h3>
                 <div class="text-start">
-                    A contabilidade é, na prática, a ciência da riqueza. Para os teóricos importantes
-                    dessa área de conhecimento, é uma ciência ou serviço social que estuda e coloca em
-                    prática funções de registro e controle relativas a atos e fatos da Economia e da
-                    Administração. De forma específica, estuda e controla o patrimônio  das empresas
-                    por meio de registros contábeis dos fatos e suas respectivas demonstrações de
-                    resultados produzidos
+                  A contabilidade é, na prática, a ciência da riqueza. Para os teóricos importantes dessa área de conhecimento, é uma ciência ou serviço social que estuda e coloca em prática de registro, controle relativo a atos e fatos da Economia e Administração. De forma específica, estuda e controla o patrimônio das empresas por meio de registros contábeis dos fatos e suas contas de resultados obtidos.
                 </div>
             </div>
             <div class="q-pa-md col-lg-4 col-md-10 q-py-xl col-xs-12 row justify-center">
@@ -85,7 +79,7 @@
             </div>
         </div>
     </section>
-    <section class="padrao flex flex-center q-py-md">
+    <section id="aberturaempresa" class="padrao flex flex-center q-py-md">
         <div class="row flex flex-center q-my-xl">
             <div class="q-pa-md col-lg-4 col-md-10 q-py-xl col-xs-10 row justify-center">
                 <q-img width="250px" height="250px" class="avatar" src="../assets/reuniao.jpg" alt="imagem de escritorio" />
@@ -94,17 +88,10 @@
                 <h3 class="borda text-start">Abertura de empresas</h3>
                 <div class="text-start">
                     <p>
-                        A formalização do seu negócio é o primeiro passo para o início das
-                        suas atividades empresariais, mas você precisa ficar atento para realizar
-                        corretamente todas as inscrições, licenças e alvarás necessários.
-                        Mesmo após ter em mãos o CNPJ, o Cadastro Nacional de Pessoas Jurídicas,
-                        e estar inscrito na Previdência Social, há uma série de licenças, registros e
-                        alvarás municipais e estaduais que você irá precisar para funcionar legalmente.
+                      A formalização do seu negócio é o primeiro passo para o início das suas atividades empresariais, mas você precisa ficar atento para realizar todas as inscrições, licenças e alvarás. Mesmo após ter em mãos o CNPJ, o Cadastro Nacional de Pessoas Jurídicas, e estar inscrito na Previdência Social, há uma série de documentações que você irá precisar para funcionar legalmente.
                     </p>
                     <p>
-                        A falta de algum desses documentos poderá atrasar ou até inviabilizar a abertura do seu empreendimento.
-                        Lembre-se que para cada ramo de atividade e/ou forma de constituição escolhida para abrir sua empresa,
-                        você precisará de autorizações distintas. 
+                      A falta de alguns documentos podem atrasar ou até inviabilizar a abertura do seu empreendimento. Lembre-se de que para cada ramo de atividade e / ou forma de constituição escolhida para abrir sua empresa, você precisa de autorizações distintas.
                     </p>
 
                     <q-btn color="primary" label="Veja as documentações" @click="onDocEmpresas" />
@@ -120,15 +107,10 @@
                 <h3 class="borda text-white text-start">Abertura de igrejas e outras instituições</h3>
                 <div class="text-start text-white">
                     <p>
-                        O termo “TERCEIRO SETOR”, no uso corrente, é usado para se referir à ação social das
-                        empresas, ao trabalho voluntário de cidadãos, às organizações do poder público
-                        privatizadas na forma de fundações e “organizações sociais”. Dentre eles podemos
-                        citar IGREJAS, ONGS, ASSOCIAÇÕES ETC
+                      O termo “TERCEIRO SETOR”, no uso corrente, é usado para se referir à ação social das empresas, ao trabalho voluntário de cidadãos, às associações do poder público privatizadas na forma de fundações etc. Dentre eles podemos citar IGREJAS, ONGS, ASSOCIAÇÕES ETC.
                     </p>
                     <p>
-                        Mais do que um conceito rigoroso ou um modelo solidamente fundamentado em
-                        teoria - organizacional, política ou sociológica – o terceiro setor, no Brasil,
-                        é uma idéia-força, um espaço mobilizador de reflexão, de recursos e, sobretudo, de ação
+                      Mais do que um conceito rigoroso ou um modelo solidamente fundamentado em teoria - organizacional, política ou sociológica - o terceiro setor, no Brasil, é uma idéia-força, um espaço mobilizador de reflexão, de recursos e, sobretudo, de ação.
                     </p>
 
                     <q-btn color="primary" label="Veja as documentações" @click="onDocIgreja" />
@@ -136,18 +118,14 @@
             </div>
         </div>
     </section>
-    <section class="padrao flex flex-center q-py-md">
+    <section id="impostorenda" class="padrao flex flex-center q-py-md">
         <div class="row  flex flex-center fit">
             <div class="col-lg-5 col-md-10 col-xs-10">
-                <h3 class="borda text-start">Imposto de renda</h3>
+                <h3 class="borda text-start">Imposto de Renda</h3>
                 <div class="text-start">
                     <p>
-                        Obrigatoriedade que movimenta milhões de brasileiros todos os anos. É uma obrigação anual que
-                        reflete na vida financeira de muitas pessoas.
-                    </p>
-                    <p>
-                        Cada cidadão tem um perfil de declarar e diferentes maneiras e soluções para se beneficiar o
-                        máximo possível ou amenizar a carga tributária.
+                      Obrigatoriedade que movimenta milhões de brasileiros todos os anos. É uma obrigação anual que reflete na vida financeira de muitas pessoas.
+Cada cidadão tem um perfil de declarar e diferentes maneiras e soluções para se beneficiar ao máximo ou amenizar sua carga tributária.
                     </p>
 
                     <q-btn color="primary" label="Veja as documentações" @click="onImpostoRenda" />
@@ -166,14 +144,12 @@
                 <h3 class="borda text-white text-start">Consultoria interna - Gestão de RH</h3>
                 <div class="text-start text-white">
                     <p>
-                        Hoje em dia ainda existem empresas na qual tem dificuldade no gerenciamento do RH / Departamento Pessoal interno de sua organização.
+                      Hoje em dia ainda existem empresas na qual tem dificuldade de gerenciamento do RH / Departamento Pessoal interno de sua organização.                    </p>
+                    <p>
+                      É importante que você tenha um olhar analítico em 360º para toda a rotina deste setor, sempre trabalhando de forma organizada, atualizada e preventiva com seu quadro de Pessoal.
                     </p>
                     <p>
-                        É importante que se tenha um olhar analítico em 360º para toda a rotina deste setor, sempre trabalhando de forma organizada, atualizada e preventiva com seu quadro de Pessoal.
-                    </p>
-                    <p>
-                        Isso vai não só além da organização dos arquivos, validade da guarda dos documentos, análise da folha, cargos e salários, alinhamento das obrigações trabalhistas, adequação layout do setor etc.
-                        Por isso, estamos prontos para vivenciar sua rotina e deixar sua empresa segura.
+                      Isso vai não só além da organização dos arquivos, validade da guarda dos documentos, análise da folha, cargos e salários, alinhamento das obrigações trabalhistas, layout de adequação do setor etc. Por isso, estamos prontos para vivenciar sua rotina e deixar sua empresa segura.
                     </p>
                     <q-btn color="primary" label="Solicite nossa consultoria" @click="onSubmit" />
 
@@ -222,11 +198,19 @@ export default defineComponent({
     onDocEmpresas() {
       this.$router.push('/empresas')
     },
-    onDocIgreja () {
-      this.$router.push('/empresas')
+    async onDocIgreja () {
+      await this.$router.push('/empresas')
+      setTimeout(() => {
+        var scrollDiv = document.getElementById("igreja2").offsetTop;
+        window.scrollTo({ top: scrollDiv, behavior: 'smooth' });
+      }, 100);
     },
-    onImpostoRenda() {
-      this.$router.push('/pessoa')
+    async onImpostoRenda() {
+      await this.$router.push('/pessoa')
+      setTimeout(() => {
+        var scrollDiv = document.getElementById("imposto").offsetTop;
+        window.scrollTo({ top: scrollDiv, behavior: 'smooth' });
+      }, 100);
     }
   },
 })

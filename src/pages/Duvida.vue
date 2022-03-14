@@ -112,7 +112,7 @@
 
       <q-expansion-item
         group="somegroup"
-        label="OCOMO SABER SE ESTOU OBRIGADO A DECLARAR O IMPOSTO DE RENDA?"
+        label="COMO SABER SE ESTOU OBRIGADO A DECLARAR O IMPOSTO DE RENDA?"
         header-class="text-bold"
       >
         <q-card>

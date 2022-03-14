@@ -12,6 +12,7 @@
                     <b>Documentos para Contratação:</b>
                     <ul>
                         <li>Exame Admissional</li>
+                        <li>Foto 3x4</li>
                         <li>CTPS</li>
                         <li>Identidade;</li>
                         <li>CPF;</li>
@@ -29,7 +30,7 @@
 
         <div class="row q-pa-md flex flex-center">
             <div class="col-xs-10 col-md-10 col-lg-8">
-                <h3 class="borda text-start">Imposto de renda</h3>
+                <h3 class="borda text-start">Imposto de Renda</h3>
                 <h6>Você que é trabalhador formal, autônomo, aposentado, pensionista, investidor, <br>prestador de serviços médicos e afins. <br>Fique de olho na relação de documentos para declaração de imposto de renda.</h6>
             </div>
             <div class="row col-xs-10 col-md-10 col-lg-8">
@@ -63,7 +64,7 @@
             </div>
         </div>
     </section>
-    <section class="padrao q-py-xl flex flex-center ">
+    <section id="medico" class="padrao q-py-xl flex flex-center ">
         <div class="row flex flex-center q-my-md">
             <div class="col-lg-3 col-xs-10 col-md-10 row justify-center">
                 <q-img width="250px" height="250px" class="avatar" src="../assets/medico.jpg" alt="imagem de escritorio" />
@@ -83,7 +84,7 @@
                     </div>
                     <div class="text-start">
                         <ul>
-                            <li><b>Despesas;</b></li>
+                            <li><b>Despesas Pagas;</b></li>
                             <li>Luz;</li>
                             <li>Água</li>
                             <li>Telefone</li>

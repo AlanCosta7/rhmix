@@ -27,7 +27,7 @@
         </div>
     </section>
 
-    <section class="padrao flex flex-center">
+    <section id="iptu" class="padrao flex flex-center">
         <div class="row flex flex-center q-my-xl">
             <div class="col-lg-3 col-xs-10 col-md-10 row justify-center">
                 <q-img width="250px" height="250px" class="avatar" src="../assets/imoveis.jpg" alt="imagem de escritorio" />

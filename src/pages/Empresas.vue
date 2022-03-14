@@ -2,7 +2,7 @@
   <q-page class="flex flex-center">
 
     <section id="contabilidade" class="padrao flex flex-center">
-        <div class="row flex flex-center q-pa-md q-my-xl">
+        <div class="row flex flex-start justify-center q-pa-md q-my-xl">
             <h3 class="col-lg-10 col-md-10 col-xs-10 borda text-start">Abrir empresa</h3>
 
             <div class="col-lg-4 col-md-10 col-xs-10">
@@ -19,7 +19,8 @@
                         <li>Informar valor do capital social investido;</li>
                         <li>Informar porcentagem de cada sócio (se houver);</li>
                         <li>Informar e-mail e telefone da empresa;</li>
-                        <li>Pagar as taxas enviadas pelo contador</li>
+                        <li>Informar ramo de atividades da empresa;</li>
+                        <li>Pagar as guias enviadas pelo contador</li>
                     </ul>
                 </div>
 
@@ -56,7 +57,7 @@
           <div class="col-lg-8 col-md-10 col-xs-10">
             <div class="row">
                 <div class="col-xs-12 col-lg-4  text-start">
-                    <b>Componentes mínimo:</b>
+                    <b>Componentes mínimos:</b>
                     <ul>
                         <li>Presidente;</li>
                         <li>Vice-presidente;</li>
@@ -81,7 +82,7 @@
           </div>
         </div>
     </section>
-    <section class="padrao flex flex-center ">
+    <section id="mei" class="padrao flex flex-center ">
         <div class="row flex flex-center q-my-xl">
             <div class="row col-lg-3 m-5 col-md-10 col-xs-10 justify-center">
                 <q-img width="250px" height="250px" class="avatar" src="../assets/reuniao.jpg" alt="imagem de escritorio" />
