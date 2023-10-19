@@ -6,7 +6,12 @@
 // Configuration for your app
 // https://v2.quasar.dev/quasar-cli/quasar-conf-js
 
+const path = require('path')
+
 const { configure } = require('quasar/wrappers');
+const env = require('dotenv').config({
+  path: './.env'
+}).parsed
 
 module.exports = configure(function (ctx) {
   return {
@@ -43,6 +48,7 @@ module.exports = configure(function (ctx) {
 
     // Full list of options: https://v2.quasar.dev/quasar-cli/quasar-conf-js#Property%3A-build
     build: {
+      env: env,
       vueRouterMode: 'history', // available values: 'hash', 'history'
 
       // transpile: false,
@@ -77,21 +83,21 @@ module.exports = configure(function (ctx) {
 
     // https://v2.quasar.dev/quasar-cli/quasar-conf-js#Property%3A-framework
     framework: {
-      config: {},
-      lang: 'pt-br',
-
-      // iconSet: 'material-icons', // Quasar icon set
-      // lang: 'en-US', // Quasar language pack
-
-      // For special cases outside of where the auto-import strategy can have an impact
-      // (like functional components as one of the examples),
-      // you can manually specify Quasar components/directives to be available everywhere:
-      //
-      // components: [],
-      // directives: [],
-
-      // Quasar plugins
-      plugins: []
+      iconSet: 'material-icons', // Quasar icon set
+      lang: 'pt-br', // Quasar language pack
+      config: {
+        notify: { /* look at QUASARCONFOPTIONS from the API card (bottom of page) */ }
+      },
+      importStrategy: 'auto',
+      plugins: [
+        'Dialog',
+        'Loading',
+        'LocalStorage',
+        'AddressbarColor',
+        'Notify',
+        'Cookies',
+        'BottomSheet'
+      ]
     },
 
     // animations: 'all', // --- includes all animations
@@ -124,10 +130,14 @@ module.exports = configure(function (ctx) {
     // https://v2.quasar.dev/quasar-cli/developing-pwa/configuring-pwa
     pwa: {
       workboxPluginMode: 'GenerateSW', // 'GenerateSW' or 'InjectManifest'
-      workboxOptions: {}, // only for GenerateSW
-
-      // for the custom service worker ONLY (/src-pwa/custom-service-worker.[js|ts])
-      // if using workbox in InjectManifest mode
+      workboxOptions: {
+        skipWaiting: true,
+        clientsClaim: true,
+        exclude: [
+          /\.html$/,   // I don't know why I need to change this matching pattern from string to RegEx to get it work.
+          '/statics/'
+        ]
+      },
       chainWebpackCustomSW (/* chain */) {
         //
       },

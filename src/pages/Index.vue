@@ -1,182 +1,56 @@
 <template>
-  <q-page class="flex flex-center">
-    <section id="main" class="padrao fit" >
-        <div class="row fit flex flex-center">
-            <div class="col-lg-5 col-md-10 col-xs-10 q-pa-md">
-                <h2 class="text-white uppercase"> <strong>Soluções empresariais</strong> </h2>
-                <h4 class="text-white">Trazendo informações e serviços a seu favor</h4>
-            </div>
+  <q-page class="fit">
+    <div v-if="abertura" class="row flex flex-center" style="height: 100vh">
+      <div class="column text-center">
+        <h3>Bem-vindo à</h3>
+        <img
+          @click="onRouter('empresa')"
+          class='animacao'
+          src="../assets/logo.gif"
+          style="width:370px"
+        >
 
-            <div class="col-lg-5 col-md-10 col-xs-12 flex flex-center">
-              <q-card class="q-pa-md" style="width: 90vw; max-width: 400px">
-                <q-card-section>
-                  <b>Qual a sua necessidade?</b>
-                  <q-input outlined v-model="text" type="text" />
-                </q-card-section>
-                <q-card-actions vertical align="center">
-                  <q-btn class="full-width" @click="onSubmitText" color="primary" label="Enviar" />
-                </q-card-actions>
-              </q-card>
-            </div>
-        </div>
-    </section>
-    <section id="sobre" class="padrao row flex flex-center">
-        <div class="q-pa-md col-lg-4 q-py-xl col-md-10 col-xs-12 row justify-center">
-            <q-img width="200px" src="../assets/logo.png" alt="logo" />
-        </div>
-        <div class="borda col-lg-6 col-md-10 col-xs-12">
-          <div>
-            <h3>Sobre</h3>
-            <p>A RH MIX SERVIÇOS EMPRESARIAIS é uma empresa não só de Serviços Contábeis,
-                mas também dos demais serviços burocráticos que são procurados e existentes
-                em um escritório contábil. Com profissionais engajados e comprometidos trabalhando
-                por você em seu negócio.
-            </p>
-            <p>Dentro deste conceito, nasceu a RH (Recursos Humanos) MIX (múltiplos serviços),
-              indo muito além dos serviços contábeis, trazendo para você a inovação no atendimento.</p>
-            <div class="q-mt-5">
-                <h6>Missão</h6>
-                <p>Levar ao mercado a melhor prestação de serviços, atendendo às necessidades de todos de forma única e humanizada.</p>
-                <h6>Visão</h6>
-                <p>Ser uma empresa referência em nossa região.</p>
-                <h6>Valores</h6>
-                <p>Simplicidade nas relações, empatia ao cliente, comprometimento, empresa solidária.</p>
-            </div>
+      <div class="q-my-xl">
+        <q-spinner-dots
+          color="primary"
+          size="3em"
+        />
+      </div>
+      </div>
+    </div>
+    <div v-else>
+      <Header :listaCarousel="listaCarousel" :carousel="true" />
+      <Servicos class="bg-white" />
+      <section class="bg-grey-3" :class="mobile?'full-width q-py-md':'q-pa-xl'">
+        <div :class="mobile?'column justify-center q-gutter-md':'q-pa-xl row full-width item-start justify-around'">
+          <div class="relative-position col-xs-10 col-sm-5">
+            <Card :content="content1" />
+          </div>
+          <div class="relative-position	col-xs-10 col-sm-5">
+            <Card :content="content2" />
           </div>
         </div>
-    </section>
-    <section id="contabilidade" class="padrao fit flex flex-center">
-        <div class="row flex flex-center">
-            <div class="q-pa-md col-lg-5 col-md-10 col-xs-12">
-                <h3 class="borda text-start">Contabilidade</h3>
-                <div class="text-start">
-                  A contabilidade é, na prática, a ciência da riqueza. Para os teóricos importantes dessa área de conhecimento, é uma ciência ou serviço social que estuda e coloca em prática de registro, controle relativo a atos e fatos da Economia e Administração. De forma específica, estuda e controla o patrimônio das empresas por meio de registros contábeis dos fatos e suas contas de resultados obtidos.
-                </div>
-            </div>
-            <div class="q-pa-md col-lg-4 col-md-10 q-py-xl col-xs-12 row justify-center">
-                <q-img width="250px" height="250px" class="avatar" src="../assets/notebook.jpg" alt="imagem de escritorio" />
-            </div>
-        </div>
-    </section>
-    <section id="clinica" class="padrao flex flex-center">
-        <div class="row flex flex-center">
-            <div class="col-lg-3 col-md-10 col-xs-12 text-end">
-            </div>
-            <div class="col-lg-7 col-md-10 q-pa-md col-xs-12">
-                <h3 class="borda text-white text-start">Contabilidade para clínica médica</h3>
-                <div class="text-start text-white">
-                    <p>
-                        O Setor de Clinicas Médicas é um ramo que sempre vem crescendo, mas também
-                        sofre uma carga tributária muito agressiva.
-                    </p>
-                    <p>
-                        É importante estar atento a esse segmento  a fim de amenizar os custos
-                        de impostos que possui tratamento diferenciado na legislação.
-                    </p>
-                    <q-btn color="primary" label="Fale conosco" @click="onSubmit" />
-
-                </div>
-            </div>
-        </div>
-    </section>
-    <section id="aberturaempresa" class="padrao flex flex-center q-py-md">
-        <div class="row flex flex-center q-my-xl">
-            <div class="q-pa-md col-lg-4 col-md-10 q-py-xl col-xs-10 row justify-center">
-                <q-img width="250px" height="250px" class="avatar" src="../assets/reuniao.jpg" alt="imagem de escritorio" />
-            </div>
-            <div class="col-lg-5 col-md-10 col-xs-10">
-                <h3 class="borda text-start">Abertura de empresas</h3>
-                <div class="text-start">
-                    <p>
-                      A formalização do seu negócio é o primeiro passo para o início das suas atividades empresariais, mas você precisa ficar atento para realizar todas as inscrições, licenças e alvarás. Mesmo após ter em mãos o CNPJ, o Cadastro Nacional de Pessoas Jurídicas, e estar inscrito na Previdência Social, há uma série de documentações que você irá precisar para funcionar legalmente.
-                    </p>
-                    <p>
-                      A falta de alguns documentos podem atrasar ou até inviabilizar a abertura do seu empreendimento. Lembre-se de que para cada ramo de atividade e / ou forma de constituição escolhida para abrir sua empresa, você precisa de autorizações distintas.
-                    </p>
-
-                    <q-btn color="primary" label="Veja as documentações" @click="onDocEmpresas" />
-                </div>
-            </div>
-        </div>
-    </section>
-    <section id="igreja" class="padrao flex flex-center q-py-md">
-       <div class="row flex flex-center">
-            <div class="col-lg-3 col-md-10 col-xs-10 text-end">
-            </div>
-            <div class="col-lg-7 col-md-10 col-xs-10">
-                <h3 class="borda text-white text-start">Abertura de igrejas e outras instituições</h3>
-                <div class="text-start text-white">
-                    <p>
-                      O termo “TERCEIRO SETOR”, no uso corrente, é usado para se referir à ação social das empresas, ao trabalho voluntário de cidadãos, às associações do poder público privatizadas na forma de fundações etc. Dentre eles podemos citar IGREJAS, ONGS, ASSOCIAÇÕES ETC.
-                    </p>
-                    <p>
-                      Mais do que um conceito rigoroso ou um modelo solidamente fundamentado em teoria - organizacional, política ou sociológica - o terceiro setor, no Brasil, é uma idéia-força, um espaço mobilizador de reflexão, de recursos e, sobretudo, de ação.
-                    </p>
-
-                    <q-btn color="primary" label="Veja as documentações" @click="onDocIgreja" />
-                </div>
-            </div>
-        </div>
-    </section>
-    <section id="impostorenda" class="padrao flex flex-center q-py-md">
-        <div class="row  flex flex-center fit">
-            <div class="col-lg-5 col-md-10 col-xs-10">
-                <h3 class="borda text-start">Imposto de Renda</h3>
-                <div class="text-start">
-                    <p>
-                      Obrigatoriedade que movimenta milhões de brasileiros todos os anos. É uma obrigação anual que reflete na vida financeira de muitas pessoas.
-Cada cidadão tem um perfil de declarar e diferentes maneiras e soluções para se beneficiar ao máximo ou amenizar sua carga tributária.
-                    </p>
-
-                    <q-btn color="primary" label="Veja as documentações" @click="onImpostoRenda" />
-                </div>
-            </div>
-            <div class="col-lg-3 col-md-10 col-xs-10 row justify-center q-my-md">
-                <q-img width="250px" height="250px" class="avatar" src="../assets/imposto.jpg" alt="imagem de escritorio" />
-            </div>
-        </div>
-    </section>
-    <section id="rh" class="padrao flex flex-center q-py-md">
-        <div class="row  flex flex-center fit">
-            <div class="col-lg-3 col-md-10 col-xs-10 text-end">
-            </div>
-            <div class="col-lg-7 col-md-10 col-xs-10">
-                <h3 class="borda text-white text-start">Consultoria interna - Gestão de RH</h3>
-                <div class="text-start text-white">
-                    <p>
-                      Hoje em dia ainda existem empresas na qual tem dificuldade de gerenciamento do RH / Departamento Pessoal interno de sua organização.                    </p>
-                    <p>
-                      É importante que você tenha um olhar analítico em 360º para toda a rotina deste setor, sempre trabalhando de forma organizada, atualizada e preventiva com seu quadro de Pessoal.
-                    </p>
-                    <p>
-                      Isso vai não só além da organização dos arquivos, validade da guarda dos documentos, análise da folha, cargos e salários, alinhamento das obrigações trabalhistas, layout de adequação do setor etc. Por isso, estamos prontos para vivenciar sua rotina e deixar sua empresa segura.
-                    </p>
-                    <q-btn color="primary" label="Solicite nossa consultoria" @click="onSubmit" />
-
-                </div>
-            </div>
-        </div>
-
-        <q-dialog v-model="dialogDoc">
-          <q-card>
-            <q-card-section class="row items-center">
-              <div class="text-h5">{{title}}</div>
-              <div>{{msg}}</div>
-            </q-card-section>
-            <q-card-actions align="right">
-              <q-btn flat label="Fechar" color="primary" v-close-popup />
-            </q-card-actions>
-          </q-card>
-        </q-dialog>
-    </section>
+      </section>
+      <Depoimento />
+      <Contato />
+    </div>
   </q-page>
 </template>
 
 <script>
 import { defineComponent } from 'vue';
-import {openURL} from 'quasar'
+import {openURL, LocalStorage} from 'quasar'
+import Header from '../components/Header.vue';
+import Depoimento from '../components/Depoimento.vue'
+import Contato from '../components/Contato.vue'
+import Servicos from '../components/Servicos.vue'
+import Card from '../components/Card.vue'
+import { useGlobalStore } from 'src/store/globalStore'
+
+const global = useGlobalStore()
 
 export default defineComponent({
+  components: { Header, Depoimento, Servicos, Card, Contato },
   name: 'PageIndex',
   data() {
     return {
@@ -184,6 +58,35 @@ export default defineComponent({
       title: null,
       msg: null,
       dialogDoc: false,
+      content1: {
+        title: 'Imposto de Renda',
+        descricao: 'Você trabalhador formal, autônomo, aposentado, pensionista, investidor, prestador de serviços médicos e afins. Esteja sempre em dia com suas obrigações fiscais. Evite o bloqueio de seu CPF, multas e acúmulos de dívidas.',
+        img: 'https://firebasestorage.googleapis.com/v0/b/rhmix-adm.appspot.com/o/servicos%2Fphoto%2Fthumbs%2F004_800x800.webp?alt=media&token=1265653a-e96e-4f35-a4f9-5181e9e3f314',
+        label: 'Fale conosco',
+        text: 'Quero saber mais sobre Imposto de Renda'
+      },
+      content2: {
+        title: 'Certificado Digital',
+        descricao: 'Diversos modelos PJ e PF. Segurança e praticidade em suas operações. Ferramenta necessária para seu dia-a-dia. Garantia na autenticidade e na integridade de seus documentos eletrônicos.',
+        img: 'https://firebasestorage.googleapis.com/v0/b/rhmix-adm.appspot.com/o/servicos%2Fphoto%2Fthumbs%2F005_800x800.webp?alt=media&token=1261eb6b-add0-43c2-912c-161159ae8a53',
+        label: 'Agende agora!',
+        text: 'Quero saber mais sobre Certificado Digital'
+      },
+    }
+  },
+  computed: {
+    listaParalax() {
+      return global.listaParalax
+    },
+
+    listaCarousel() {
+      return global.listaCarousel
+    },
+    abertura() {
+      return global.abertura
+    },
+    mobile() {
+      return global.mobile
     }
   },
   methods: {
@@ -213,5 +116,28 @@ export default defineComponent({
       }, 100);
     }
   },
+  mounted() {
+    let value = LocalStorage.getItem('abertura')
+
+    setTimeout(() => {
+      if(value) {
+        global.setAbertura(value)
+      } else {
+        LocalStorage.set('abertura', false)
+
+        global.setAbertura(false)
+      }
+    }, 3000)
+  },
 })
 </script>
+
+<style >
+.animacao {
+  animation-name: nome-da-animacao;
+  animation-duration: 2s;
+  animation-fill-mode: forwards;
+  animation-iteration-count: 1;
+}
+
+</style>
