@@ -1,15 +1,15 @@
 <template>
   <section>
     <div class="row items-start bg-primary">
-      <div class="col-md col-xs-12">
-        <q-img
-          src="https://firebasestorage.googleapis.com/v0/b/rhmix-adm.appspot.com/o/pexels-anna-shvets-3727464.jpg?alt=media&token=5e6c7f91-061e-4b76-863d-c5e289ffca61"
-          :ratio="6/7"
-          width="100%"
-          spinner-color="primary"
-          spinner-size="82px"
-        />
-      </div>
+      <q-parallax :height="650" class="col-md-6 col-xs-12">
+        <template v-slot:media>
+            <video autoplay loop muted>
+              <source src="../assets/video.mp4" type="video/mp4">
+              Seu navegador não suporta o elemento de vídeo.
+            </video>
+        </template>
+      </q-parallax>
+
       <div class="col-md col-xs-12 text-white" :style="mobile?'padding: 20px':'padding: 100px;'" >
         <div class="text-h4 text-weight-bolder"> Conte com a RHMix, entre em contato agora</div>
         <div class="q-my-sm">Converse agora mesmo com um especialista e descubra <b>como podemos somar com você</b>.</div>
@@ -24,7 +24,6 @@
           <q-btn rounded color="white" text-color="primary" class="text-bold text-primary" style="width:150px" @click="onRouter()"  label="Fale conosco" />
         </div>
       </div>
-      <div class="col-12" style="height: 100px"></div>
     </div>
 
   </section>

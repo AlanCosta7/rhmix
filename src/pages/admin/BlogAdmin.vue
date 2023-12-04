@@ -38,6 +38,8 @@
               <div>
                 <q-input outlined v-model="form.data.title" type="text" label="Título" />
               </div>
+
+              <div>{{ getSlug(form.data.title) }}</div>
               <div>
                 <q-input filled v-model="form.data.date" >
                   <template v-slot:append>
@@ -52,6 +54,12 @@
                     </q-icon>
                   </template>
                 </q-input>
+              </div>
+              <div>
+                <q-input v-model="form.data.btn" outlined type="text" label="Label do botão" />
+              </div>
+              <div>
+                <q-input v-model="form.data.link" outlined type="text" label="Link do botão" />
               </div>
             </div>
           </div>
@@ -160,6 +168,8 @@ let form = ref({
     title: null,
     date: null,
     text: null,
+    btn: null,
+    link: null,
     img: './'
   }
 })
@@ -184,12 +194,18 @@ function onReset() {
       title: '',
       date: '',
       text: '',
+      btn: null,
+      link: null,
       img: './'
     }
   }
 }
 
 async function onSubmit() {
+  const timeStamp = Date.now()
+
+  form.value.data.slug = getSlug(form.value.data.title)
+  form.value.data.timeStamp = timeStamp
 
   if(form.value.id) {
     let val = {
@@ -263,6 +279,13 @@ function onVideo() {
   form.value.data.text = form.value.data.text + `<iframe width="853" height="480" src="https://www.youtube.com/embed/${textvideo.value}?rel=0" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>`
   console.log('onVideo', form.value.data.text)
   textvideo.value = null
+}
+
+function getSlug(str) {
+  if(str) {
+    str = str.toLowerCase().replace(/[^\w\s]/gi, '').replace(/\s+/g, '-')
+  }
+  return str;
 }
 
 </script>

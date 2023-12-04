@@ -46,6 +46,17 @@
             />
           </a>
         </div>
+        <div>
+          <a target="_blank" href="https://www.linkedin.com/company/rhmixcontabil/">
+            <q-img
+              src="../assets/social/linkedin.png"
+              width="30px"
+              :ratio="1"
+              spinner-color="primary"
+              spinner-size="82px"
+            />
+          </a>
+        </div>
       </div>
     </div>
 
@@ -82,7 +93,7 @@
             spinner-color="primary"
             spinner-size="82px"
           />
-          <div>rhmixadm@gmail.com</div>
+          <div>contato@rhmixcontabil.com.br</div>
         </div>
       </div>
     </div>

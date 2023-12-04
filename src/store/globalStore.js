@@ -136,7 +136,7 @@ export const useGlobalStore = defineStore('global', {
         .catch((error) => {
           let code = error.code;
           his.error = error
-
+          console.log('error', error)
           if(code) {
             var throwError = !!his.errors[code] ? his.errors[code] : 'Ops!'
             let val = {

@@ -7,7 +7,6 @@ import * as Imagem from './imagem/index'
 export const authOnCreate = Auth.onCreate
 
 // Email
-export const sendGroup = Email.sendGroup
 export const sendContato = Email.sendContato
 
 // Imagem

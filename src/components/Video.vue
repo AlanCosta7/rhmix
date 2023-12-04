@@ -36,7 +36,7 @@ let video = computed(() => content.value?.data?.video?.url)
 
 function getVideo(item) {
   let id = item.split('v=')
-  let url = `https://www.youtube.com/embed/${id[1]}?rel=0`
+  let url = `https://www.youtube.com/embed/${id[1]}?autoplay=1&controls=0&loop=1&rel=0&playlist=${id[1]}`
   return url
 }
 

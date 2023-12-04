@@ -22,7 +22,7 @@
       <Header :listaCarousel="listaCarousel" :carousel="true" />
       <Servicos class="bg-white" />
       <section class="bg-grey-3" :class="mobile?'full-width q-py-md':'q-pa-xl'">
-        <div :class="mobile?'column justify-center q-gutter-md':'q-pa-xl row full-width item-start justify-around'">
+        <div :class="mobile?'column justify-center q-gutter-md':'q-pa-xl row no-wrap q-gutter-md full-width item-start justify-around'">
           <div class="relative-position col-xs-10 col-sm-5">
             <Card :content="content1" />
           </div>

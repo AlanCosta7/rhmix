@@ -23,4 +23,8 @@ const $functions = getFunctions(app);
 const $storage = getStorage(app);
 const $auth = getAuth(app);
 
+if (location.hostname === "localhost") {
+  connectFunctionsEmulator($functions, "127.0.0.1", 5001)
+}
+
 export { $firestore, $functions, $analytics, $auth, $storage};

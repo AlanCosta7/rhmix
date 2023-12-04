@@ -1,78 +1,65 @@
-import { firestore, functions } from '../commons-init'
+import { functions } from '../commons-init'
 import * as constants from '../constants'
 
-const sgMail = require("@sendgrid/mail");
+const Logger = functions.logger
 
-sgMail.setApiKey(
-  constants.SENDGRID_KEY
-)
+const nodemailer = require("nodemailer");
+const {google} = require('googleapis');
 
-// Envia email para um grupo de usuários
-export const sendGroup = functions.region('southamerica-east1').https.onCall( async (data:any, context:any) => {
+const EMAIL = constants.EMAIL
+const CLIENTID = constants.CLIENTID
+const CLIENTSECRET = constants.CLIENTSECRET
+const REFRESHTOKEN = constants.REFRESHTOKEN
 
-  const { group, assunto, message, collectionName, arg, campo  } = data
+const OAuth2_client = new google.auth.OAuth2(
+  CLIENTID,
+  CLIENTSECRET,
+);
 
-  group.forEach((element: any) => {
-    firestore.collection(collectionName).where(campo, arg, element)
-      .get()
-      .then((querySnapshot:any) => {
-        querySnapshot.forEach((doc:any) => {
-          if (doc.exists) {
-            const email = doc.data().email
+OAuth2_client.setCredentials({
+  refresh_token: REFRESHTOKEN
+});
 
-            const msg = {
-              to: email,
-              from: constants.EMAIL,
-              subject: assunto,
-              text: message,
-              html: message
-            }
+OAuth2_client.setCredentials({ refresh_token: REFRESHTOKEN})
 
-            sgMail.send(msg).then(() => {
-              console.log('Enviado com sucesso')
-            }).catch((error: any) => {
-              console.log('Error:', error)
-            })
+const accessToken = OAuth2_client.getAccessToken();
 
-          }
-        });
-      })
-      .catch((error:any) => {
-        console.log('Error:', error)
-      })
-  })
-
-  return
-
+let transporter = nodemailer.createTransport({
+  service: 'gmail',
+  auth: {
+    type: 'OAuth2',
+    user: EMAIL,
+    clientId: CLIENTID,
+    clientSecret: CLIENTSECRET,
+    refreshToken: REFRESHTOKEN,
+    accessToken: accessToken
+  }
 })
 
 // Envia email para todos os usuários
-export const sendContato = functions.region('southamerica-east1').https.onCall( async (data:any, context:any) => {
+export const sendContato = functions.https.onCall( async (data:any, context:any) => {
 
   let nome = data.name
   let tel = data.tel
   let email = data.email
-  let emailAdmin = 'alanpc7@gmail.com'
   let subject = `${data.assunto} - contato de ${nome}`
   let text = data.msg
 
   const msg = {
-    to: email,
-    from: emailAdmin,
+    from: EMAIL,
+    to: ['contato@rhmixcontabil.com.br', email],
     subject: subject,
     text: `Nome: ${nome}, Email: ${email}, Telefone: ${tel}, Menssagem: ${text}`,
     html: `<p>Nome: ${nome}</p><p>Email: ${email}</p><p>Telefone: ${tel}</p><p>Menssagem: ${text}</p>`,
   }
 
-  sgMail
-    .send(msg)
-    .then((response:any) => {
-      console.log(response[0].statusCode)
-      console.log(response[0].headers)
-    })
-    .catch((error:any) => {
-      console.error(error.response.body.errors)
-    })
+  await transporter.sendMail(msg, (err:any) => {
+    if(err) {
+      Logger.error(err)
+      return
+    }
+    Logger.log('mensagem enviada com sucesso')
+  })
 
   return 'mensagem enviada com sucesso'
 })
