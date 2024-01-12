@@ -18,6 +18,7 @@ const routes = [
       { path: 'blog-admin', name: 'blog-admin', component: () => import('pages/admin/BlogAdmin.vue') },
       { path: 'banner-admin', name: 'banner-admin', component: () => import('pages/admin/BannerAdmin.vue') },
       { path: 'servicos-admin', name: 'servicos-admin', component: () => import('pages/admin/ServicosAdmin.vue') },
+      { path: 'depoimento-admin', name: 'depoimento-admin', component: () => import('pages/admin/DepoimentoAdmin.vue') },
     ]
   },
 

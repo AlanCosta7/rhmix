@@ -65,6 +65,10 @@ const essentialLinks = [
     link: 'servicos-admin'
   },
   {
+    title: 'Depoimentos',
+    link: 'depoimento-admin'
+  },
+  {
     title: 'Deslogar',
     link: 'logout'
   },

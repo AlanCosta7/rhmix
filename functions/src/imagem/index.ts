@@ -29,6 +29,27 @@ export const generateThumbnail = functions.storage.object().onFinalize(async (ob
       default:
         break
     }
+
+  } else if(type == 'image') {
+    switch (size) {
+      case '400':
+        await firestore.collection(collectionName).doc(id).update({
+          image: link,
+        })
+        break
+      default:
+        break
+    }
+  } else if(type == 'logo') {
+    switch (size) {
+      case '200':
+        await firestore.collection(collectionName).doc(id).update({
+          logo: link,
+        })
+        break
+      default:
+        break
+    }
   } else {
     switch (size) {
       case '200':

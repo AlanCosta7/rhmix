@@ -6,11 +6,13 @@
     "serve": "npm run build && firebase emulators:start --only functions",
     "shell": "npm run build && firebase functions:shell",
     "start": "npm run shell",
-    "deploy": "firebase deploy --only functions:sendContato",
+    "deploy": "firebase deploy --only functions:generateThumbnail",
     "logs": "firebase functions:log"
   },
   "engines": {
-    "node": "18"
+    "node": "^18",
+    "npm": ">= 6.13.4",
+    "yarn": ">= 1.21.1"
   },
   "main": "lib/index.js",
   "dependencies": {
